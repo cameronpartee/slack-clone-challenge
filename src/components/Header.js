@@ -2,7 +2,7 @@ import styled from "styled-components";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Container>
       <Main>
@@ -15,9 +15,15 @@ const Header = () => {
         <HelpOutlineIcon />
       </Main>
       <UserContainer>
-        <Name>Cameron Partee</Name>
+        <Name>{props.user.name}</Name>
         <UserImage>
-          <img src="https://i.imgur.com/6VBx3io.png" />
+          <img
+            src={
+              props.user.photo
+                ? props.user.photo
+                : "https://i.imgur.com/6VBx3io/png"
+            }
+          />
         </UserImage>
       </UserContainer>
     </Container>
