@@ -10,8 +10,8 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [rooms, setRooms] = useState([]);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 
-  // ARROW FUNCTION SYNTAX
   const getChannels = () => {
     db.collection("rooms").onSnapshot((snapshot) => {
       setRooms(
@@ -32,20 +32,21 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Container>
-          <Header />
-          <Main>
-            <Sidebar rooms={rooms} />
-            <Switch>
-              <Route path="/room">
-                <Chat />
-              </Route>
-              <Route path="/">
-                <Login />
-              </Route>
-            </Switch>
-          </Main>
-        </Container>
+        {!user ? (
+          <Login setUser={setUser} />
+        ) : (
+          <Container>
+            <Header user={user} />
+            <Main>
+              <Sidebar rooms={rooms} />
+              <Switch>
+                <Route path="/room">
+                  <Chat />
+                </Route>
+              </Switch>
+            </Main>
+          </Container>
+        )}
       </Router>
     </div>
   );
