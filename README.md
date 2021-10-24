@@ -7,4 +7,4 @@
 - firebase auth
 - react routing
 
-![img](https://i.imgur.com/HCC6zdV.png)
+![img](https://i.imgur.com/MtrfOoh.png)
