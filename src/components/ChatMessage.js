@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
-const ChatMessage = () => {
+const ChatMessage = ({ text, name, image, timestamp }) => {
   return (
     <Container>
       <UserAvatar>
-        <img src="https://randomuser.me/api/portraits/women/6.jpg" />
+        <img src={image} />
       </UserAvatar>
       <MessageContent>
         <Name>
-          Cameron Partee <span>2/23/2021 11:13:55 AM</span>
+          {name}
+          <span>{new Date(timestamp).toDateString()}</span>
         </Name>
-        <Text>How is the Challange?</Text>
+        <Text>{text}</Text>
       </MessageContent>
     </Container>
   );
