@@ -1,10 +1,8 @@
-# Slack Clone Challenge
+# Slack Clone
 
-# Features
+![img](https://i.imgur.com/MtrfOoh.png)
 
 - styled components
 - firebase database
 - firebase auth
 - react routing
-
-![img](https://i.imgur.com/MtrfOoh.png)
